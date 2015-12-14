@@ -23,7 +23,11 @@ Development requires software to edit and test your code.  Make sure you have al
   - Windows: Download [Node.js](https://nodejs.org/en/) Node comes with NPM so don't worry about that yet.
   - Linux: Run `sudo apt-get install npm` in a terminal.
   - Mac : Run `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` in a terminal to get [Homebrew](http://brew.sh/) if you don't already have it, then run `brew install npm`.
-  - **Bower and Gulp.** These can both be installed with NPM.  Once you have NPM (see above), open up a terminal and run `npm install -g gulp && npm install -g bower`.  If you are on linux or mac, you may need to run `sudo npm install -g gulp && sudo npm install -g bower`.
+  - **Bower and Gulp.** These can both be installed with NPM.  Once you have NPM (see above), open up a terminal and run `npm install -g gulp && npm install -g bower`.  If you are on Linux or Mac, you may need to run `sudo npm install -g gulp && sudo npm install -g bower`.
+- **Graphics Magick.** This is used to resize images for multiple screen resolutions, so the site loads faster on small screens.
+  - Windows: Download [Graphics Magick](http://www.graphicsmagick.org/download.html).
+  - Linux: Run `sudo apt-get install graphicsmagick` in a terminal.
+  - Mac: Assuming you did the steps above and have [Homebrew](http://brew.sh/), run `brew install graphicsmagick`.
 
 ### Step 2: Fork the Repository
 
@@ -185,6 +189,27 @@ The Learn page is loaded from `app/pages/learn.html`.  If you know of any online
 You can also add yourself as a resource, using a `<member-card>` element.  Again, there is example code in learn.html, but you can just insert `<member-card name="Your_Name"></member-card>` into the `<card-carousel>`.
 
 Your help in giving our newer members resources to start them on their way is much appreciated.
+
+------
+
+## Using a Custom Set of Browsers For Testing
+
+Create a file in the project root called `testing-browsers.json`.  In it, put an array of strings of the desired browsers.  For example:
+
+```
+[
+  "default",
+  "firefox",
+  "google chrome",
+  "safari",
+  "opera",
+  "iexplore"
+]
+```
+
+Please note, `"default"` corresponds to your currently selected default browser.  Also, Microsoft Edge is not supported because it is weird.  Sorry, I tried to make it work, but it just doesn't.  You will have to open in manually and paste in the URL.
+
+That's it.  Only the browser(s) you put in `testing-browsers.json` should now open up when you run `gulp serve`.
 
 ------
 
